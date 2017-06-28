@@ -7,12 +7,14 @@
     "react-dom": "^15.6.1"
   },
   "devDependencies": {
+    "json-server": "^0.10.1",
     "react-scripts": "1.0.7"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "PORT=9000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node src/server.js"
   }
 }
