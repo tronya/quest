@@ -7,21 +7,38 @@ body {
     font-size: 10px;
 }
 
-table {
-    display: table;
-    table-layout: fixed;
+.User_list {
+    max-width: 600px;
+    margin: auto;
+}
+
+.User_item {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    border-bottom: 1px solid grey;
+    font-size: 1.4em;
+}
+
+.User_info {
+    text-align: right;
+}
+
+.container {
+    position: relative;
+    display: block;
     width: 100%;
 }
 
-th {
-    background: aqua;
-    color: white;
-    font-size: 1.7em;
-    font-weight: lighter;
-    text-shadow: 1px 2px 5px black;
+.Photo_container {
+    display: flex;
+    width: 100%;
+    background: url(http://yourshot.nationalgeographic.com/u/fQYSUbVfts-T7odkrFJckdiFeHvab0GWOfzhj7tYdC0uglagsDNeZgL7slPxjZIiombl5-bW2HBqmzLhARbUNJsrRqjWV6IMFYQTIEzP6MKTY0DaknXmuusRLZQK0kLI_OZBklbFVkTdTM6DiWwEaAzWIQMaMX89UXOOIYE2dgSC23mc5NE4ICH7AIdrNiMgvK58QBLtenrbFQ9m5bGotDjysxnwgts/);
+    background-size: cover;
 }
 
-.User_item:nth-child(odd) {
-    background: gray;
-    color: white;
+.photo-element {
+}
+
+.photo-element:before {
 }
