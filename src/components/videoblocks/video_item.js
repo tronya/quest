@@ -5,16 +5,15 @@
 
 import React from 'react';
 
-const VideoElement = ({video}) => {
+const VideoElement = ({video, onVideoSelect}) => {
     const imageUrl = video.snippet.thumbnails.high.url;
     return (
-        <div className="video-element">
+        <div className="video-element" onClick={() => onVideoSelect(video)}>
             <div className="video-body">
                 <img alt={video.snippet.title} src={imageUrl}/>
             </div>
             <div className="video-information">
                 <p>{video.snippet.title}</p>
-                <small>{video.snippet.description}</small>
             </div>
         </div>
     )

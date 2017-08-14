@@ -12,10 +12,11 @@ const VideoPlayer = ({video}) => {
     return (
         <div className="video-player">
             <div className="video-wrapper">
-                <iframe className="video-iframe" src={embedVideo} ></iframe>
+                <iframe className="video-iframe" src={embedVideo} title={video.snippet.title}></iframe>
             </div>
             <div className="video-description">
-                <h3>{video.s}</h3>
+                <h2>{video.snippet.title}</h2>
+                <h3>{video.snippet.description}</h3>
             </div>
         </div>
     )
