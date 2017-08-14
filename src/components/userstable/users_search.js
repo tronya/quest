@@ -3,7 +3,9 @@
  */
 import React, {Component} from 'react';
 
-class UsersSearch extends Component {
+
+class SearchComponent extends Component {
+
     constructor(props) {
         super(props);
         this.state = {
@@ -23,13 +25,17 @@ class UsersSearch extends Component {
     render() {
         console.log(this.state);
         return (
-            <div className="search-input-wrapper">
-                <input type="text" className="search-filed"
-                       onChange={event => this.setState({term: event.target.value})}/>
-                <span>{this.state.term}</span>
-            </div>
+            <section>
+                <div className="search-input-wrapper">
+                    <input type="text" className="search-filed"
+                           placeholder="Search in YouTube..."
+                           value={this.state.term}
+                           onChange={event => this.setState({term: event.target.value})}/>
+                    <span>{this.state.term}</span>
+                </div>
+            </section>
         )
     }
 }
 
-export default UsersSearch;
+export default SearchComponent;
