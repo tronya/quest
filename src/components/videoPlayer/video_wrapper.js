@@ -33,6 +33,14 @@ class VideoWrapper extends React.Component {
             type: 'video'
         };
 
+
+        axios.get('https://www.instagram.com/oauth/authorize/?client_id=e1746dbf2f4e4dbdaa8a1a22f6ad8ed8&redirect_uri=https://tronya.github.io/quest/&response_type=code')
+            .then(function (response) {
+                console.log(response);
+            })
+            .catch(function (error) {
+                console.error(error);
+            });
         axios.get(ROOT_URL, {params: params})
             .then(function (response) {
                 let videos = response.data.items;
