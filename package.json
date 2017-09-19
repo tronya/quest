@@ -4,13 +4,13 @@
   "private": true,
   "homepage": "https://tronya.github.io/quest",
   "dependencies": {
-    "lodash": "^4.17.4",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "youtube-api-search": "0.0.5"
+    "react-facebook-login": "^3.6.2"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
+    "helmet": "^3.8.1",
     "json-server": "^0.10.1",
     "react-scripts": "1.0.7"
   },
