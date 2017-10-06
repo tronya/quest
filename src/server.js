@@ -4,8 +4,8 @@ server.use(router)
 app.use(helmet.hsts({
   maxAge: 31536000
 }));
-app.use(function(req, res, next) {
-  res.header('Access-Control-Allow-Origin', 'http://localhost:9000/');
+app.use(function (req, res, next) {
+  res.header('Access-Control-Allow-Origin', '*');
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept,Authorization");
   res.header('Access-Control-Allow-Methods', 'GET,PUT,POST,DELETE,PATCH,OPTIONS');
 
@@ -30,7 +30,7 @@ app.use(helmet.cors({
 
 app.use(helmet.contentSecurityPolicy({
   directives: {
-    defaultSrc: ["'self'",'http://188.166.18.216',"188.166.18.21", "http://localhost:9000"],
+    defaultSrc: ["'self'", 'http://188.166.18.216', "188.166.18.21", "http://localhost:9000"],
     styleSrc: ["'self'", "'unsafe-inline'"],
     imgSrc: ["'self'", "data:", "http://188.166.18.216", "http://localhost:9000"],
     scriptSrc: ["'self'", "'unsafe-inline'", "http://188.166.18.216", "http://localhost:9000"]

@@ -15,13 +15,21 @@ class App extends Component {
   }
 
   componentDidMount() {
-    this.setState({appKey: facebook.init().then((r, e) => appToken(r)).then((appT) => console.log(appT.token))});
+    facebook.init()
+      .then(fbToken => appToken(fbToken))
+      .then(r => this.setState({appKey: r}));
   }
 
   render() {
+    let questList;
+    if (this.state.appKey) {
+      questList = <QuestList appToken={this.state.appKey}></QuestList>
+    } else {
+      questList = <div>Loading...</div>
+    }
     return (
-      <div>
-        <QuestList appToken={this.state.appKey}></QuestList>
+      <div className="container">
+        {questList}
       </div>
     )
   }

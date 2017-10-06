@@ -1,4 +1,3 @@
-
 let facebook = {
 
   init() {
@@ -12,8 +11,20 @@ let facebook = {
           xfbml: true,  // parse social plugins on this page
           version: 'v2.10' // use version 2.1
         });
+
         FB.getLoginStatus(function (response) {
-          good(response.authResponse.accessToken);
+          if (response.authResponse) {
+            good(response.authResponse.accessToken);
+          }else{
+            FB.login(function (response) {
+              if (response.authResponse) {
+                console.log('Welcome!  Fetching your information.... ');
+                window.location.reload()
+              } else {
+                console.log('User cancelled login or did not fully authorize.');
+              }
+            });
+          }
         });
       };
 
