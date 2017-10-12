@@ -1,40 +1,39 @@
 import React, {Component} from 'react';
+import {BrowserRouter} from "react-router-dom";
 import ReactDOM from 'react-dom';
 import './index.css';
-import QuestList from "./components/Quest/QuestList";
 import {facebook} from "./components/Utils/facebook"
 import {appToken} from "./components/Utils/appToken"
+import Main from "./components/Main/Main";
 
 class App extends Component {
 
   constructor(props) {
     super(props);
     this.state = {
-      appKey: ""
+      loading: true,
     }
   }
 
   componentDidMount() {
     facebook.init()
       .then(fbToken => appToken(fbToken))
-      .then(r => this.setState({appKey: r}));
+      .then(token => this.setState({loading: false}));
   }
 
   render() {
-    let questList;
-    if (this.state.appKey) {
-      questList = <QuestList appToken={this.state.appKey}></QuestList>
+    if (this.state.loading) {
+      return <div className="Loading">Loading...</div>;
     } else {
-      questList = <div>Loading...</div>
+      return (
+        <Main/>
+      )
     }
-    return (
-      <div className="container">
-        {questList}
-      </div>
-    )
   }
 };
 
-ReactDOM.render(
-  <App/>, document.getElementById('root')
-);
+ReactDOM.render((
+  <BrowserRouter>
+    <App/>
+  </BrowserRouter>
+), document.getElementById('root'));

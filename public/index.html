@@ -13,7 +13,7 @@
 
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.ico">
-    <link href="https://fonts.googleapis.com/css?family=Roboto+Condensed:300,400,700&amp;subset=cyrillic"
+    <link href="https://fonts.googleapis.com/css?family=Roboto:300,400,700&amp;subset=cyrillic"
           rel="stylesheet">
     <!--
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -43,27 +43,7 @@
   To begin the development, run `npm start` or `yarn start`.
   To create a production bundle, use `npm run build` or `yarn build`.
 -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
-
-<!-- Compiled and minified JavaScript -->
-<script
-        src="https://code.jquery.com/jquery-3.2.1.min.js"
-        integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
-        crossorigin="anonymous"></script>
-<script>
-  window.fbAsyncInit = function () {
-    FB.init({
-      appId: '1626186040998763',
-      cookie: true,  // enable cookies to allow the server to access
-      // the session
-      xfbml: true,  // parse social plugins on this page
-      version: 'v2.10' // use version 2.1
-    });
-    FB.getLoginStatus(function (response) {
-      console.log(response);
-    });
-  };
-</script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+<script src='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.js'></script>
+<link href='https://api.mapbox.com/mapbox-gl-js/v0.40.1/mapbox-gl.css' rel='stylesheet'/>
 </body>
 </html>

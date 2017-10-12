@@ -1,28 +1,23 @@
 import React from 'react';
+import {Link} from "react-router-dom";
+import Moment from 'react-moment';
 
 const QuestItem = ({quest}) => {
-  console.log(quest)
+  console.log(quest);
+  const bg_image = {
+    backgroundImage: `url(${quest.logo})`
+  };
   return (
-    <div className="col s12 m6">
-      <div className="card hoverable small">
-        <div className="card-image">
-          <img src={quest.logo} alt={quest.name}/>
-          <span className="card-title">{quest.name}</span>
-        </div>
-        <div className="card-content">
-          <p>{quest.description}</p>
-        </div>
+    <div className="quest-item" style={bg_image}>
+      <div className="quest-item-wrapp">
+        <p className="card-title">{quest.name}</p>
+        <p className="card-date">
+          <Moment fromNow>{quest.start_date}</Moment>
+
+        </p>
+        <Link className="btn" to={`/quest/${quest.id}`}>Detail</Link>
       </div>
     </div>
-    // <div className="quest-item">
-    //   <img src={quest.logo} alt={quest.name}/>
-    //   <div className="quest-item-info">
-    //     <h3>{quest.name}</h3>
-    //     <h4>{quest.description}</h4>
-    //     <p>Count of markers:{quest.markers.length}</p>
-    //     <p>{quest.start_date}</p>
-    //   </div>
-    // </div>
   )
 }
 export default QuestItem;

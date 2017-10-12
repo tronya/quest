@@ -1,0 +1,15 @@
+@import "reset.css";
+@import "variables";
+@import "components";
+@import "components/Quest/quests";
+
+
+body {
+  background: $light;
+  color: $dark;
+  font-family: Roboto;
+}
+.container{
+  width: 100%;
+  min-height: 100vh;
+}

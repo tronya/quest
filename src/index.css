@@ -1,0 +1,120 @@
+@import url(reset.css);
+.btn {
+  padding: 7px 25px;
+  background: #fff;
+  margin: 5px 0;
+  border-radius: 4px;
+  display: inline-block;
+  box-shadow: 2px 5px 5px rgba(0, 0, 0, 0.3);
+  font-size: 20px;
+  font-weight: 100;
+  min-width: 100px;
+  transition: 0.3s; }
+  .btn:hover {
+    background: black;
+    color: #fff; }
+
+.quests-list .quest-item {
+  min-height: 350px;
+  background-size: cover;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-position: center; }
+  .quests-list .quest-item .card-title {
+    font-size: 3em;
+    color: #fff;
+    text-shadow: 3px 4px 7px black; }
+  .quests-list .quest-item .card-date {
+    color: #c7efcf;
+    font-weight: 100; }
+
+.quest-detail {
+  display: flex;
+  min-height: 100vh; }
+  .quest-detail .quest-detail-map {
+    width: 50%;
+    background: black;
+    position: fixed;
+    top: 0;
+    right: 0;
+    height: 100vh; }
+    .quest-detail .quest-detail-map #map {
+      width: 100%;
+      height: 100%; }
+  .quest-detail .quest-information-block {
+    padding: 15px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    overflow: hidden;
+    width: 50%;
+    box-sizing: border-box; }
+    .quest-detail .quest-information-block .title {
+      font-size: 3em;
+      font-weight: 100;
+      text-shadow: 14px 7px 20px #333745;
+      padding: 1.5em 0 1.5em 2em;
+      box-sizing: border-box;
+      color: #fff;
+      margin: 1em;
+      border-left: 2px solid #e63462; }
+    .quest-detail .quest-information-block .blured-bg {
+      position: absolute;
+      width: 120%;
+      height: 120%;
+      top: -10%;
+      left: -10%;
+      z-index: -1;
+      filter: blur(50px);
+      overflow: hidden;
+      background-clip: border-box;
+      background-origin: content-box;
+      background-size: cover; }
+    .quest-detail .quest-information-block .info .quest_img {
+      width: 25%; }
+    .quest-detail .quest-information-block .info .description {
+      color: #fff;
+      font-weight: lighter;
+      text-align: center;
+      line-height: 2;
+      font-size: 20px;
+      letter-spacing: 0px; }
+    .quest-detail .quest-information-block .members-list {
+      background: #333745;
+      padding: 15px;
+      box-sizing: border-box; }
+      .quest-detail .quest-information-block .members-list span {
+        color: white; }
+      .quest-detail .quest-information-block .members-list .quest-member {
+        display: inline-block;
+        margin-right: 15px; }
+        .quest-detail .quest-information-block .members-list .quest-member .literalName {
+          display: inline-block;
+          width: 50px;
+          height: 50px;
+          vertical-align: middle;
+          text-align: center;
+          border-radius: 50%;
+          background: #eee;
+          border: 2px solid #e63462;
+          -webkit-box-sizing: border-box;
+          -moz-box-sizing: border-box;
+          box-sizing: border-box; }
+          .quest-detail .quest-information-block .members-list .quest-member .literalName span {
+            font-size: 1.5em;
+            vertical-align: middle;
+            line-height: 50px; }
+
+body {
+  background: #fff;
+  color: #333745;
+  font-family: Roboto; }
+
+.container {
+  width: 100%;
+  min-height: 100vh; }
+
+/*# sourceMappingURL=index.css.map */

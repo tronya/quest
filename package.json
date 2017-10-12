@@ -4,9 +4,14 @@
   "private": true,
   "homepage": "https://tronya.github.io/quest",
   "dependencies": {
+    "moment": "^2.19.1",
+    "moment-timezone": "^0.5.13",
+    "node-sass-chokidar": "0.0.3",
     "react": "^15.6.1",
     "react-dom": "^15.6.1",
-    "react-facebook-login": "^3.6.2"
+    "react-facebook-login": "^3.6.2",
+    "react-moment": "^0.6.5",
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "gh-pages": "^1.0.0",
@@ -15,6 +20,7 @@
     "react-scripts": "1.0.7"
   },
   "scripts": {
+    "style": "sass --watch src/index.scss:src/index.css",
     "start": "PORT=9000 react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",

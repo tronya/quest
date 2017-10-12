@@ -10,10 +10,17 @@ let appToken = (fbToken) => {
       method: "post",
       body: JSON.stringify({access_token: fbToken})
     })
-      .then(function (response) {
-        resp(response.json());
-      });
+      .then(responce => responce.json())
+      .then((r) => {
+          localStorage.setItem("appToken", r.token)
+          resp(r.token)
+        }
+      );
   });
 };
 
-export {appToken}
+let tokenFromStorage = () =>{
+  return localStorage.getItem("appToken");
+}
+
+export {appToken,tokenFromStorage};

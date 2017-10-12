@@ -1,6 +1,7 @@
 import React from "react";
 
 import QuestItem from "./QuestItem";
+import {tokenFromStorage} from "../Utils/appToken";
 
 let serverUrl = "http://188.166.18.216/api/v1/";
 
@@ -13,8 +14,7 @@ class QuestList extends React.Component {
   }
 
   componentDidMount() {
-    let {token} = this.props.appToken;
-    console.log("token is", token);
+    let token = tokenFromStorage();
     if (token) {
       fetch(`${serverUrl}quests/`, {
         method: "GET",
@@ -34,7 +34,7 @@ class QuestList extends React.Component {
       )
     });
     return (
-      <div className="row">
+      <div className="quests-list">
         {quests}
       </div>
     )
