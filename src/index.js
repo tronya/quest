@@ -5,6 +5,9 @@ import './index.css';
 import {facebook} from "./components/Utils/facebook"
 import {appToken} from "./components/Utils/appToken"
 import Main from "./components/Main/Main";
+import LoadingView from "./components/LoadingView/loadingView";
+import {Provider} from 'react-redux'
+import configureStore from "./redux/store"
 
 class App extends Component {
 
@@ -23,7 +26,7 @@ class App extends Component {
 
   render() {
     if (this.state.loading) {
-      return <div className="Loading">Loading...</div>;
+      return <LoadingView/>
     } else {
       return (
         <Main/>
@@ -31,9 +34,18 @@ class App extends Component {
     }
   }
 };
+// const store = createStore(
+//   () => {
+//   },
+//   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+// );
+
+const store = configureStore();
 
 ReactDOM.render((
-  <BrowserRouter>
-    <App/>
-  </BrowserRouter>
+  <Provider store={store}>
+    <BrowserRouter>
+      <App/>
+    </BrowserRouter>
+  </Provider>
 ), document.getElementById('root'));

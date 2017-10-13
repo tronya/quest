@@ -11,8 +11,16 @@
   font-weight: 100;
   min-width: 100px;
   transition: 0.3s;
-  &:hover{
+  border: 0;
+  &:hover {
     background: black;
-    color:$light;
+    color: $light;
+  }
+  &.error {
+    background: $primary;
+    color: $light;
+    &:hover {
+      background: $secondary;
+    }
   }
 }

@@ -1,10 +1,10 @@
-import QuestList from "../Quest/QuestList";
+import QuestListContainer from "../../containers/Quests";
 import React, {Component} from "react";
 
 class HomeScreen extends Component {
   render() {
     return (
-      <QuestList/>
+      <QuestListContainer/>
     )
   }
 }

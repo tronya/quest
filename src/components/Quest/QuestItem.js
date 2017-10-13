@@ -1,12 +1,13 @@
 import React from 'react';
 import {Link} from "react-router-dom";
 import Moment from 'react-moment';
+import AssignBlock from "../AssignBlock/AssignBlock";
 
 const QuestItem = ({quest}) => {
-  console.log(quest);
   const bg_image = {
     backgroundImage: `url(${quest.logo})`
   };
+
   return (
     <div className="quest-item" style={bg_image}>
       <div className="quest-item-wrapp">
@@ -16,6 +17,9 @@ const QuestItem = ({quest}) => {
 
         </p>
         <Link className="btn" to={`/quest/${quest.id}`}>Detail</Link>
+        <div className="assignee">
+          <AssignBlock isAssigned={quest.is_assigned} questId={quest.id}/>
+        </div>
       </div>
     </div>
   )
