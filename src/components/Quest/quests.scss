@@ -38,13 +38,17 @@
 .quest-detail {
   display: flex;
   min-height: 100vh;
-  .quest-detail-map {
+  &.collapsed .quest-information-block {
     width: 50%;
+  }
+  & > * {
+    transition: .7s;
+  }
+  .quest-detail-map {
+    max-width: 50%;
     background: black;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh;
+    width: 100%;
+    min-height: 100vh;
     #map {
       width: 100%;
       height: 100%;
@@ -57,10 +61,10 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    width: 50%;
     box-sizing: border-box;
     background: $black;
     z-index: 0;
+    width: 100%;
 
     .title {
       font-size: 2em;
@@ -87,6 +91,10 @@
       background-origin: content-box;
       background-size: cover;
       opacity: 0.2;
+      //animation: bg-detail;
+      //animation-duration: 20s;
+      //animation-iteration-count: infinite;
+      //animation-timing-function: linear;
     }
     .info {
       .quest_img {
@@ -125,7 +133,6 @@
       }
       .quest-member {
         display: inline-block;
-        margin-right: $mainPadding;
         .literalName {
           display: inline-block;
           width: 30px;
@@ -138,7 +145,7 @@
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
-          margin: 0 10px;
+          margin: 0 5px;
           span {
             font-size: 1em;
             vertical-align: middle;
@@ -148,5 +155,14 @@
         }
       }
     }
+  }
+}
+
+@keyframes bg-detail {
+  from {
+    transform: rotate(360deg);
+  }
+  to {
+    transform: rotate(0deg);
   }
 }

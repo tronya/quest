@@ -1,43 +1,33 @@
 import React from "react";
 
 import QuestItem from "./QuestItem";
-import {tokenFromStorage} from "../Utils/appToken";
-
-let serverUrl = "http://188.166.18.216/api/v1/";
+import LoadingView from "../LoadingView/loadingView";
 
 class QuestList extends React.Component {
-  constructor(props) {
-    super(props)
-    this.state = {
-      quests: []
-    }
+  componentWillMount() {
+    this.props.takeQuests();
   }
 
-  componentDidMount() {
-    let token = tokenFromStorage();
-    if (token) {
-      fetch(`${serverUrl}quests/`, {
-        method: "GET",
-        headers: {
-          'Authorization': `Token ${token}`
-        }
-      })
-        .then((R) => R.json())
-        .then(resp => this.setState({quests: resp}));
-    }
-  }
 
   render() {
-    let quests = this.state.quests.map((quest) => {
+    const {quests} = this.props;
+
+    if (quests) {
+      let questsElement = Object.values(quests).map((quest) => {
+        return (
+          <QuestItem key={quest.id} quest={quest}/>
+        )
+      });
       return (
-        <QuestItem key={quest.id} quest={quest}></QuestItem>
+        <div className="row">
+          <div className="quests-list">
+            {questsElement}
+          </div>
+        </div>
       )
-    });
-    return (
-      <div className="quests-list">
-        {quests}
-      </div>
-    )
+    } else {
+      return <LoadingView/>
+    }
   }
 
 

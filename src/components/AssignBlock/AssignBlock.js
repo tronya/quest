@@ -1,55 +1,26 @@
 import React, {Component} from "react";
-import {tokenFromStorage} from "../Utils/appToken";
-
-let serverUrl = "http://188.166.18.216/api/v1/";
-
 
 class AssignBlock extends Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      ...props
-    };
-  }
 
-  componentWillReceiveProps(props) {
-    this.setState({...props});
-  }
-
-  leaveAssignQuesry() {
-    console.log("this.state", this.state);
-    let token = tokenFromStorage();
-    let decision = this.state.isAssigned ? "leave" : "join";
-    let method = this.state.isAssigned ? "DELETE" : "POST";
-    if (token) {
-      fetch(`${serverUrl}quests/${this.state.questId}/${decision}/`, {
-        method,
-        headers: {
-          'Authorization': `Token ${token}`
-        }
-      })
-        .then(resp => {
-          console.log("resp", resp);
-          if (resp.status === 200) {
-
-          }
-        });
-    }
+  assignedCheck() {
+    let {is_assigned, id} = this.props;
+    this.props.questSubscription(id, is_assigned);
   }
 
   render() {
+    let {showButton, is_assigned} = this.props;
 
     const button = () => {
-      if (this.state.showButton) {
-        let text = this.state.isAssigned ? "Let me quit" : "Assign me!";
-        let btnClassName = this.state.isAssigne ? "success btn" : "error btn";
+      if (showButton) {
+        let text = is_assigned ? "Let me quit" : "Assign me!";
+        let btnClassName = is_assigned ? "success btn" : "error btn";
         return (
-          <button onClick={this.leaveAssignQuesry.bind(this)} className={btnClassName}>{text}</button>
+          <button onClick={this.assignedCheck.bind(this)} className={btnClassName}>{text}</button>
         )
       }
     };
 
-    if (this.state.isAssigned) {
+    if (is_assigned) {
       return (
         <div className="assignee">
           {button()}
@@ -64,7 +35,7 @@ class AssignBlock extends Component {
         </div>
       )
     }
-  };
+  }
 }
 
 export default AssignBlock;

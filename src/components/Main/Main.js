@@ -1,7 +1,8 @@
 import {Switch, Route} from 'react-router-dom';
 import React, {Component} from "react";
 import HomeScreen from "../HomeScreen/HomeScreen";
-import QuestDetail from "../Quest/QuestDetail";
+import QuestDetailContainer from "../../containers/QuestDetail";
+import GameContainer from "../../containers/Game";
 
 class Main extends Component {
   render() {
@@ -9,7 +10,8 @@ class Main extends Component {
       <div className="container">
         <Switch>
           <Route exact path='/' component={HomeScreen}/>
-          <Route exact path='/quest/:id' component={QuestDetail}/>
+          <Route exact path='/quest/:id' component={QuestDetailContainer}/>
+          <Route exact path='/game/:id' component={GameContainer}/>
         </Switch>
       </div>
     )

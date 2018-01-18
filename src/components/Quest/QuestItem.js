@@ -18,7 +18,7 @@ const QuestItem = ({quest}) => {
         </p>
         <Link className="btn" to={`/quest/${quest.id}`}>Detail</Link>
         <div className="assignee">
-          <AssignBlock isAssigned={quest.is_assigned} questId={quest.id}/>
+          <AssignBlock showButton={false} {...quest}/>
         </div>
       </div>
     </div>

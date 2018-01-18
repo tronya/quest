@@ -47,13 +47,15 @@
 .quest-detail {
   display: flex;
   min-height: 100vh; }
+  .quest-detail.collapsed .quest-information-block {
+    width: 50%; }
+  .quest-detail > * {
+    transition: .7s; }
   .quest-detail .quest-detail-map {
-    width: 50%;
+    max-width: 50%;
     background: black;
-    position: fixed;
-    top: 0;
-    right: 0;
-    height: 100vh; }
+    width: 100%;
+    min-height: 100vh; }
     .quest-detail .quest-detail-map #map {
       width: 100%;
       height: 100%; }
@@ -64,10 +66,10 @@
     flex-direction: column;
     justify-content: space-between;
     overflow: hidden;
-    width: 50%;
     box-sizing: border-box;
     background: #000;
-    z-index: 0; }
+    z-index: 0;
+    width: 100%; }
     .quest-detail .quest-information-block .title {
       font-size: 2em;
       font-weight: 100;
@@ -110,7 +112,7 @@
       font-weight: 100;
       text-align: right; }
     .quest-detail .quest-information-block .members-list {
-      background: #333745;
+      background: #333;
       padding: 15px;
       box-sizing: border-box; }
       .quest-detail .quest-information-block .members-list span {
@@ -121,8 +123,7 @@
           vertical-align: sub;
           margin-right: 10px; }
       .quest-detail .quest-information-block .members-list .quest-member {
-        display: inline-block;
-        margin-right: 15px; }
+        display: inline-block; }
         .quest-detail .quest-information-block .members-list .quest-member .literalName {
           display: inline-block;
           width: 30px;
@@ -135,21 +136,73 @@
           -webkit-box-sizing: border-box;
           -moz-box-sizing: border-box;
           box-sizing: border-box;
-          margin: 0 10px; }
+          margin: 0 5px; }
           .quest-detail .quest-information-block .members-list .quest-member .literalName span {
             font-size: 1em;
             vertical-align: middle;
             line-height: 30px;
-            color: #333745; }
+            color: #333; }
+
+@keyframes bg-detail {
+  from {
+    transform: rotate(360deg); }
+  to {
+    transform: rotate(0deg); } }
+.routes-info .routes-info-block {
+  margin-bottom: 20px; }
+  .routes-info .routes-info-block .routes-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 0;
+    margin: 15px 0;
+    border-top: 1px solid #FE5f55;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1); }
+  .routes-info .routes-info-block .route-lags-wrapp .routes-leg {
+    display: flex;
+    padding: 5px;
+    justify-content: space-between;
+    border-bottom: 1px solid #333; }
 
 body {
-  background: #fff;
-  color: #333745;
+  background: #000;
+  color: #333;
   font-family: Roboto; }
+
+p {
+  color: white;
+  font-weight: 100; }
+  p i {
+    color: #e63462;
+    margin-right: 5px; }
+  p span {
+    color: #FE5f55; }
 
 .container {
   width: 100%;
   min-height: 100vh; }
+
+.block-loading {
+  width: auto;
+  height: auto;
+  position: relative; }
+  .block-loading .rotating-block {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    animation: rotate;
+    animation-duration: 3s;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    border-radius: 50%;
+    overflow: hidden; }
+    .block-loading .rotating-block .dustItem {
+      position: absolute;
+      height: 1px;
+      width: 1px;
+      background: white;
+      font-size: 0;
+      transition: 3s;
+      border-radius: 50%; }
 
 .main-loading {
   position: fixed;
@@ -160,6 +213,95 @@ body {
   top: 0;
   left: 0;
   justify-content: center;
-  text-align: center; }
+  text-align: center;
+  background: #000; }
+  .main-loading .particles .dustItem {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    color: white;
+    font-size: 2px;
+    transition: 5s;
+    transition-timing-function: linear;
+    border-radius: 50%; }
+  .main-loading .loading {
+    font-weight: 100;
+    display: block;
+    width: auto;
+    margin: 0 auto;
+    padding: 20px 60px;
+    font-size: 4em;
+    perspective: 100vw;
+    position: relative; }
+    .main-loading .loading p {
+      text-transform: uppercase;
+      font-weight: bold;
+      color: #000;
+      z-index: 10;
+      position: relative; }
+    .main-loading .loading:after {
+      content: "";
+      background: linear-gradient(to right, white 0%, rgba(255, 255, 255, 0.02) 85%);
+      width: 100%;
+      height: 66px;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      -webkit-transform: rotateY(-40deg);
+      transform: rotateY(-40deg);
+      margin: auto;
+      border-radius: 15px 60px 0;
+      bottom: 0;
+      right: 0; }
+
+.game-wrapper {
+  width: 100%;
+  min-height: 100vh;
+  position: relative;
+  display: flex; }
+  .game-wrapper #gameMap {
+    width: 70%;
+    min-height: inherit; }
+  .game-wrapper .game-players-wrapp {
+    background: #000;
+    width: 30%; }
+    .game-wrapper .game-players-wrapp .total-users {
+      font-size: 1.3em;
+      font-weight: 100;
+      text-align: center;
+      padding: 10px;
+      border-bottom: 1px solid #333; }
+    .game-wrapper .game-players-wrapp .game-players .game-player-block {
+      position: relative;
+      padding: 12px;
+      border-bottom: 1px solid;
+      display: flex;
+      justify-content: space-between;
+      align-items: center; }
+      .game-wrapper .game-players-wrapp .game-players .game-player-block .username .fa {
+        color: #fff;
+        font-size: 2em;
+        vertical-align: middle;
+        margin-right: 10px; }
+      .game-wrapper .game-players-wrapp .game-players .game-player-block .username p {
+        display: inline-block;
+        vertical-align: middle;
+        text-transform: uppercase;
+        color: #e63462; }
+      .game-wrapper .game-players-wrapp .game-players .game-player-block .coordinates .fa {
+        color: #fff;
+        font-size: 2em;
+        vertical-align: middle;
+        margin-right: 10px; }
+      .game-wrapper .game-players-wrapp .game-players .game-player-block .coordinates .info {
+        display: inline-block;
+        vertical-align: middle; }
+
+@keyframes rotation {
+  from {
+    transform: rotate(0); }
+  to {
+    transform: rotate(360deg); } }
 
 /*# sourceMappingURL=index.css.map */
