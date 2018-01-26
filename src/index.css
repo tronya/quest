@@ -189,12 +189,13 @@ p {
     position: relative;
     width: 100px;
     height: 100px;
-    animation: rotate;
+    animation: rotation;
     animation-duration: 3s;
     animation-timing-function: linear;
     animation-iteration-count: infinite;
     border-radius: 50%;
-    overflow: hidden; }
+    overflow: hidden;
+    margin: auto; }
     .block-loading .rotating-block .dustItem {
       position: absolute;
       height: 1px;

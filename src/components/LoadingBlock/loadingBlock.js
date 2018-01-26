@@ -51,7 +51,7 @@ class LoadingBLock extends Component {
   }
 
   createMotion(el) {
-      let sInterval = ((getRandomInt(1, 9) * 0.1) + getRandomInt(1, 3)) * 1000;
+      let sInterval = ((getRandomInt(1, 9) * 0.1) + getRandomInt(0, 1)) * 1000;
       this.makeMovements(el);
       let intervalMovements = setInterval(() => {
         this.makeMovements(el)
