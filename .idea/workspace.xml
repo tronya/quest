@@ -2,16 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="9a2d1434-f5a7-41a4-b380-cc0dda8dbb04" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ParticlesLoader/Emitter.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ParticlesLoader/Field.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ParticlesLoader/Particle.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ParticlesLoader/ParticlesLoader.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/components/ParticlesLoader/Vector.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/LoadingBlock/loadingBlock.js" afterPath="$PROJECT_DIR$/src/components/LoadingBlock/loadingBlock.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/Main/Main.js" afterPath="$PROJECT_DIR$/src/components/Main/Main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.css" afterPath="$PROJECT_DIR$/src/index.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/index.scss" afterPath="$PROJECT_DIR$/src/index.scss" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/ParticlesLoader/ParticlesLoader.js" afterPath="$PROJECT_DIR$/src/components/ParticlesLoader/ParticlesLoader.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -40,8 +32,8 @@
       <file leaf-file-name="ParticlesLoader.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/components/ParticlesLoader/ParticlesLoader.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+            <state relative-caret-position="495">
+              <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
               <folding>
                 <element signature="e#0#41#0" expanded="true" />
               </folding>
@@ -602,7 +594,7 @@
       <workItem from="1516571185696" duration="14000" />
       <workItem from="1516869978451" duration="2630000" />
       <workItem from="1516872793682" duration="6191000" />
-      <workItem from="1516956849398" duration="10000" />
+      <workItem from="1516956849398" duration="662000" />
     </task>
     <task id="LOCAL-00001" summary="Json server">
       <created>1498650984101</created>
@@ -681,11 +673,18 @@
       <option name="project" value="LOCAL" />
       <updated>1516289292826</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="test particles">
+      <created>1516956892202</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1516956892202</updated>
+    </task>
+    <option name="localTasksCounter" value="13" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="278669000" />
+    <option name="totallyTimeSpent" value="279321000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -740,7 +739,8 @@
     <MESSAGE value="Routing&#10;refactoring" />
     <MESSAGE value="Refactor styles map changes" />
     <MESSAGE value="read.me" />
-    <option name="LAST_COMMIT_MESSAGE" value="read.me" />
+    <MESSAGE value="test particles" />
+    <option name="LAST_COMMIT_MESSAGE" value="test particles" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -1092,8 +1092,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/components/ParticlesLoader/ParticlesLoader.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="135">
-          <caret line="9" column="25" lean-forward="false" selection-start-line="9" selection-start-column="25" selection-end-line="9" selection-end-column="25" />
+        <state relative-caret-position="495">
+          <caret line="33" column="6" lean-forward="false" selection-start-line="33" selection-start-column="6" selection-end-line="33" selection-end-column="6" />
           <folding>
             <element signature="e#0#41#0" expanded="true" />
           </folding>

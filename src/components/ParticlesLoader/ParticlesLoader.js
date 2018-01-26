@@ -30,16 +30,12 @@ class ParticlesLoader extends Component {
 
 
     this.emitters = [
-      new Emitter(new Vector(getRandomInt(0,this.canvas.width), getRandomInt(0,this.canvas.height)), Vector.fromAngle(6, 2), 3.14, "#00edff"),
-      new Emitter(new Vector(getRandomInt(0,this.canvas.width), getRandomInt(0,this.canvas.height)), Vector.fromAngle(6, 2), 3.14, "#c300ff"),
-      new Emitter(new Vector(getRandomInt(0,this.canvas.width), getRandomInt(0,this.canvas.height)), Vector.fromAngle(6, 2), 3.14, "#a1ff00"),
+      new Emitter(new Vector(this.midX, this.midY - 70), Vector.fromAngle(6, 2), 3.14, "#00edff"),
+      new Emitter(new Vector(this.midX + 50, this.midY + 50), Vector.fromAngle(6, 2), 3.14, "#c300ff"),
+      new Emitter(new Vector(this.midX - 50, this.midY + 50), Vector.fromAngle(6, 2), 3.14, "#a1ff00"),
     ];
     this.fields = [
-      new Field(new Vector(
-        getRandomInt(0,this.canvas.width), getRandomInt(0,this.canvas.height)), getRandomInt(-1000,1000)),
-      new Field(new Vector(getRandomInt(0,this.canvas.width), getRandomInt(0,this.canvas.height)), getRandomInt(-1000,1000)),
-      new Field(new Vector(getRandomInt(0,this.canvas.width), getRandomInt(0,this.canvas.height)), getRandomInt(-1000,1000)),
-      new Field(new Vector(getRandomInt(0,this.canvas.width), getRandomInt(0,this.canvas.height)), getRandomInt(-1000,1000)),
+      new Field(new Vector(this.midX, this.midY), 200),
 
     ];
     this.loop()
